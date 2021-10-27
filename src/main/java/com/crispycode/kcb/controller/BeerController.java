@@ -1,2 +1,4 @@
-package com.crispycode.kcb.controller;public class BeerController {
+package com.crispycode.kcb.controller;
+
+public class BeerController {
 }
