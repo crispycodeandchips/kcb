@@ -1,6 +1,6 @@
 package com.crispycode.kcb.controller;
 
-import com.crispycode.kcb.dto.BreweryLineuplResponseDto;
+import com.crispycode.kcb.dto.BreweryLineupResponseDto;
 import com.crispycode.kcb.model.Brewery;
 import com.crispycode.kcb.service.BreweryService;
 import lombok.RequiredArgsConstructor;
@@ -18,7 +18,7 @@ public class BreweryController {
     private final BreweryService breweryService;
 
     @GetMapping("/{id}/lineup")
-    public ResponseEntity<Brewery> getBreweryLineup(@PathVariable Integer id){
+    public ResponseEntity<BreweryLineupResponseDto> getBreweryLineup(@PathVariable Integer id){
         // ResponseEntity로 안 감싸면 그냥 단순히 DTO만 던지는 것.
         // ResponseEnity로 감싸야 200, 400, 404 같은 status를 포함해서 값을 보낼 수 있다.
         return new ResponseEntity(breweryService.getLineup(id), HttpStatus.OK);

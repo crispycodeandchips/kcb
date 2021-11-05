@@ -1,9 +1,7 @@
 package com.crispycode.kcb.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.crispycode.kcb.model.Beer;
+import lombok.*;
 
 import java.util.List;
 
@@ -11,7 +9,8 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class BreweryLineuplResponseDto {
+@Builder
+public class BreweryLineupResponseDto {
 
     private String breweryName;
     private String imageUrl;
@@ -20,7 +19,7 @@ public class BreweryLineuplResponseDto {
     private String homepageUrl;
     private String instagram;
 
-    private List<BreweryBeerResponseDto> lineups;
+    private List<Beer> lineups;
 
 
 
