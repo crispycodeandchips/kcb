@@ -16,6 +16,4 @@ public class BeerResponseDto {
     private String name;
     private String brewery;
     private String image;
-
-    private List<BeerResponseDto> Beers;
 }
