@@ -3,7 +3,7 @@ package com.crispycode.kcb.service;
 import com.crispycode.kcb.dto.BreweryLineupResponseDto;
 import com.crispycode.kcb.mapper.BeerMapper;
 import com.crispycode.kcb.mapper.BreweryMapper;
-import com.crispycode.kcb.model.Beer;
+import com.crispycode.kcb.model.LineUpBeer;
 import com.crispycode.kcb.model.Brewery;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -18,14 +18,14 @@ public class BreweryService {
     public BreweryLineupResponseDto getLineup (Integer id){
 
         Brewery brewery = breweryMapper.selectBreweryById();
-        List<Beer> beerList = beerMapper.selectByBreweryId();
+        List<LineUpBeer> lineUpBeerList = beerMapper.selectByBreweryId();
         BreweryLineupResponseDto dto = BreweryLineupResponseDto.builder()
                 .breweryName(brewery.getBreweryName())
                 .address(brewery.getAddress())
                 .contact(brewery.getPhone())
                 .homepageUrl(brewery.getHomepage())
                 .instagram(brewery.getInstagram())
-                .lineups(beerList)
+                .lineups(lineUpBeerList)
                 .build();
         return dto;
     }

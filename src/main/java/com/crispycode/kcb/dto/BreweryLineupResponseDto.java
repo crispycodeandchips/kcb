@@ -1,6 +1,6 @@
 package com.crispycode.kcb.dto;
 
-import com.crispycode.kcb.model.Beer;
+import com.crispycode.kcb.model.LineUpBeer;
 import lombok.*;
 
 import java.util.List;
@@ -19,7 +19,7 @@ public class BreweryLineupResponseDto {
     private String homepageUrl;
     private String instagram;
 
-    private List<Beer> lineups;
+    private List<LineUpBeer> lineups;
 
 
 

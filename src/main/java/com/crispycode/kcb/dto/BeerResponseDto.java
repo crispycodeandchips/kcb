@@ -5,15 +5,14 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.List;
-
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class BeerResponseDto {
 
-    private String name;
-    private String brewery;
-    private String image;
+    private String beerImage;
+    private String beerName;
+    private String breweryName;
+    private String releaseDate;
 }

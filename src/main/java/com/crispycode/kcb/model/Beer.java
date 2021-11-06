@@ -11,14 +11,8 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Beer {
 
-    private String beerName;
     private String beerImage;
-    private String location;
-    private String style;
-    private String abv;
-
-
-//    SELECT beer_name, beer_image, location, style, abv
-//    FROM beer
-//    WHERE brewery_id = 6;
+    private String beerName;
+    private String breweryName;
+    private String releaseDate;
 }
