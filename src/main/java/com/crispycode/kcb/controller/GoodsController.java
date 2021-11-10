@@ -1,7 +1,10 @@
 package com.crispycode.kcb.controller;
 
 import com.crispycode.kcb.dto.BeerResponseDto;
-import com.crispycode.kcb.dto.EventResponseDto;
+import com.crispycode.kcb.dto.GoodsResponseDto;
+import com.crispycode.kcb.model.Goods;
+import com.crispycode.kcb.service.BeerService;
+import com.crispycode.kcb.service.GoodsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,19 +16,13 @@ import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
-@RequestMapping(value = "/main")
-public class MainController {
+@RequestMapping(value = "/goods")
+public class GoodsController {
+    private final GoodsService goodsService;
 
-    @GetMapping(value = "/beers")
-    public ResponseEntity<List<BeerResponseDto>> getMainBeers() {
+    @GetMapping
+    public ResponseEntity<List<Goods>> getGoodsList(){
 
-        return new ResponseEntity<>(HttpStatus.ACCEPTED);
+        return new ResponseEntity(goodsService.getList(), HttpStatus.OK);
     }
-
-    @GetMapping(value = "/events")
-    public ResponseEntity<EventResponseDto> getMainEvents() {
-
-        return new ResponseEntity<>(HttpStatus.ACCEPTED);
-    }
-
 }
