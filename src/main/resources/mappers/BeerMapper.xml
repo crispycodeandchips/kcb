@@ -9,6 +9,12 @@
         WHERE brewery_id = 6;
     </select>
 
+    <select id="selectRecentBeers" resultType="com.crispycode.kcb.model.Beer">
+        SELECT b.beer_image, b.beer_name, b.release_date, bw.brewery_name
+        from Beer b join brewery bw on b.brewery_id = bw.brewery_id
+        order by release_date desc LIMIT 5;
+    </select>
+
     <select id="selectAll"  resultType="com.crispycode.kcb.model.Beer">
         SELECT br.brewery_name, b.beer_name, b.beer_image, b.release_date
         FROM beer b JOIN brewery br on b.brewery_id = br.brewery_Id

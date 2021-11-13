@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -14,5 +16,5 @@ public class BeerResponseDto {
     private String beerImage;
     private String beerName;
     private String breweryName;
-    private String releaseDate;
+    private LocalDate releaseDate;
 }

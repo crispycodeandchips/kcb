@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -13,6 +15,6 @@ public class Beer {
 
     private String beerImage;
     private String beerName;
+    private LocalDate releaseDate;
     private String breweryName;
-    private String releaseDate;
 }

@@ -23,4 +23,8 @@ public class BeerService {
                 .collect(Collectors.toList());
         return dtoList;
     }
+
+    public List<Beer> getRecentList(){
+        return beerMapper.selectRecentBeers();
+    }
 }

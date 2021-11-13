@@ -9,4 +9,9 @@
     WHERE brewery_id = 8;
     </select>
 
+    <select id="selectRecentEvents" resultType="com.crispycode.kcb.model.BreweryEvent">
+        SELECT image, start_date, end_date, event_name
+        from Event
+        order by start_date desc limit 3;
+    </select>
 </mapper>

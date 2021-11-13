@@ -10,4 +10,5 @@ import java.util.List;
 public interface BeerMapper {
     List<LineUpBeer> selectByBreweryId();
     List<Beer> selectAll();
+    List<Beer> selectRecentBeers();
 }

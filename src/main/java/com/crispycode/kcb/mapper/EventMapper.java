@@ -9,4 +9,5 @@ import java.util.List;
 @Mapper
 public interface EventMapper {
     List<BreweryEvent> selectEventByBreweryId();
+    List<BreweryEvent> selectRecentEvents();
 }
