@@ -3,10 +3,10 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.crispycode.kcb.mapper.BreweryMapper">
-    <select id="selectBreweryById" resultType="com.crispycode.kcb.model.Brewery">
+    <select id="selectBreweryById" parameterType="int" resultType="com.crispycode.kcb.model.Brewery">
         SELECT br.brewery_name, br.image, br.address, br.phone, br.homepage, br.instagram, br.summary
         FROM brewery br
-        WHERE brewery_id = 6;
+        WHERE brewery_id = #{id};
     </select>
 
 </mapper>

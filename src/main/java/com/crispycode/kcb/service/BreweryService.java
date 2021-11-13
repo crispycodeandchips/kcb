@@ -22,8 +22,8 @@ public class BreweryService {
 
     public BreweryLineupResponseDto getLineup (Integer id){
 
-        Brewery brewery = breweryMapper.selectBreweryById();
-        List<LineUpBeer> lineUpBeerList = beerMapper.selectByBreweryId();
+        Brewery brewery = breweryMapper.selectBreweryById(id);
+        List<LineUpBeer> lineUpBeerList = beerMapper.selectByBreweryId(id);
         BreweryLineupResponseDto dto = BreweryLineupResponseDto.builder()
                 .breweryName(brewery.getBreweryName())
                 .address(brewery.getAddress())
@@ -35,8 +35,8 @@ public class BreweryService {
         return dto;
     }
     public BreweryEventResponseDto getEvents (Integer id) {
-        Brewery brewery = breweryMapper.selectBreweryById();
-        List<BreweryEvent> breweryEvent = eventMapper.selectEventByBreweryId();
+        Brewery brewery = breweryMapper.selectBreweryById(id);
+        List<BreweryEvent> breweryEvent = eventMapper.selectEventByBreweryId(id);
         BreweryEventResponseDto dto = BreweryEventResponseDto.builder()
                 .breweryName(brewery.getBreweryName())
                 .address(brewery.getAddress())

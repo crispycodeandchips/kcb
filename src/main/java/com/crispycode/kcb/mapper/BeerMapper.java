@@ -8,7 +8,7 @@ import java.util.List;
 
 @Mapper
 public interface BeerMapper {
-    List<LineUpBeer> selectByBreweryId();
+    List<LineUpBeer> selectByBreweryId(Integer id);
     List<Beer> selectAll();
     List<Beer> selectRecentBeers();
 }
