@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequiredArgsConstructor
-@RequestMapping(value = "/brewery")
+@RequestMapping(value = "/breweries")
 public class BreweryController {
     private final BreweryService breweryService;
 

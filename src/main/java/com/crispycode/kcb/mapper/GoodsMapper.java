@@ -9,5 +9,6 @@ import java.util.List;
 public interface GoodsMapper {
 
     List<Goods> selectGoods();
+    Goods selectById(Integer id);
 
 }

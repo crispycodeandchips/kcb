@@ -1,9 +1,7 @@
 package com.crispycode.kcb.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.crispycode.kcb.dto.GoodsDetailResponseDto;
+import lombok.*;
 
 @Getter
 @Setter
@@ -14,4 +12,15 @@ public class Goods {
     private String name;
     private Integer price;
     private String goodsImage;
+    private String summary;
+
+    public GoodsDetailResponseDto toDetailDto() {
+        return GoodsDetailResponseDto.builder()
+                .id(goodsId)
+                .name(name)
+                .price(price)
+                .summary(summary)
+                .goodsImage(goodsImage)
+                .build();
+    }
 }

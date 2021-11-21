@@ -18,10 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(value = "/brewpubs")
 public class BrewpubsController {
         private final BrewpubService brewpubService;
-        /*@GetMapping("/{id}/beers")
-        public ResponseEntity<BrewpubBeerResponseDto> getBrewpubResponseDto(@PathVariable Integer id){
-            return new ResponseEntity(brewpubService.getBeers(id), HttpStatus.OK);
-        }*/
+
         @GetMapping("/{id}")
         public ResponseEntity<Brewpub> getBrewpub(@PathVariable Integer id){
             return new ResponseEntity(brewpubService.getBrewpub(id), HttpStatus.OK);

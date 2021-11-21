@@ -30,7 +30,7 @@ public class MainController {
     }
 
     @GetMapping(value = "/events")
-    public ResponseEntity<List<BreweryEvent>> getGoodsList(){
+    public ResponseEntity<List<BreweryEvent>> getEventList(){
 
         return new ResponseEntity(eventService.getRecentList(), HttpStatus.OK);
     }
