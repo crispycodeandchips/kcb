@@ -13,7 +13,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class BeerResponseDto {
 
-    private String beerImage;
+    private byte[] beerImage;
     private String beerName;
     private String breweryName;
     private LocalDate releaseDate;
