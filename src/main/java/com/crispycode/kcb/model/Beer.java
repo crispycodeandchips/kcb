@@ -13,7 +13,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class Beer {
 
-    private String beerImage;
+    private byte[] beerImage;
     private String beerName;
     private LocalDate releaseDate;
     private String breweryName;

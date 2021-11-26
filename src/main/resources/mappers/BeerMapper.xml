@@ -9,6 +9,12 @@
         WHERE brewery_id = #{id};
     </select>
 
+    <update id="insertImage" parameterType="com.crispycode.kcb.model.VoTest">
+        UPDATE beer
+        SET beer_image = #{file.bytes}
+        WHERE beer_id = #{file.id};
+    </update>
+
     <select id="selectRecentBeers" resultType="com.crispycode.kcb.model.Beer">
         SELECT b.beer_image, b.beer_name, b.release_date, bw.brewery_name
         from Beer b join brewery bw on b.brewery_id = bw.brewery_id
