@@ -18,6 +18,8 @@ public class Brewery {
     private String homepage;
     private String instagram;
     private String summary;
+    private double latitude;
+    private double longitude;
 
     //SELECT br.brewery_name, br.image, br.address, br.phone, br.homepage, br.instagram, br.summary
     //        FROM brewery br

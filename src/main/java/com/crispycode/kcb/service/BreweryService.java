@@ -1,10 +1,13 @@
 package com.crispycode.kcb.service;
 
+import com.crispycode.kcb.dto.BeerResponseDto;
 import com.crispycode.kcb.dto.BreweryEventResponseDto;
 import com.crispycode.kcb.dto.BreweryLineupResponseDto;
+import com.crispycode.kcb.dto.BreweryMapResponseDto;
 import com.crispycode.kcb.mapper.BeerMapper;
 import com.crispycode.kcb.mapper.BreweryMapper;
 import com.crispycode.kcb.mapper.EventMapper;
+import com.crispycode.kcb.model.Beer;
 import com.crispycode.kcb.model.BreweryEvent;
 import com.crispycode.kcb.model.LineUpBeer;
 import com.crispycode.kcb.model.Brewery;
@@ -12,6 +15,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Service
@@ -46,5 +50,14 @@ public class BreweryService {
                 .events(breweryEvent)
                 .build();
         return dto;
+    }
+
+    public List<BreweryMapResponseDto> getMap() {
+       List<Brewery> breweries =  breweryMapper.selectAll();
+       List<BreweryMapResponseDto> dtoList = breweries.stream()
+               .map(brewery -> new BreweryMapResponseDto(
+                       brewery.getLatitude(), brewery.getLongitude(), brewery.getBreweryName()))
+                .collect(Collectors.toList());
+        return dtoList;
     }
 }

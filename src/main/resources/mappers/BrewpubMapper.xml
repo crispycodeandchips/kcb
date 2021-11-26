@@ -9,4 +9,9 @@
         where brewpub_id = #{id};
     </select>
 
+    <select id="selectAll" resultType="com.crispycode.kcb.model.Brewpub">
+        SELECT brewpub_name, image, address, phone, homepage, facebook, instagram, summary,
+               latitude, longitude
+        FROM Brewpub
+    </select>
 </mapper>

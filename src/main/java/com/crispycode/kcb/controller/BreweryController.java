@@ -2,6 +2,7 @@ package com.crispycode.kcb.controller;
 
 import com.crispycode.kcb.dto.BreweryEventResponseDto;
 import com.crispycode.kcb.dto.BreweryLineupResponseDto;
+import com.crispycode.kcb.dto.BreweryMapResponseDto;
 import com.crispycode.kcb.model.Brewery;
 import com.crispycode.kcb.service.BreweryService;
 import lombok.RequiredArgsConstructor;
@@ -17,6 +18,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(value = "/breweries")
 public class BreweryController {
     private final BreweryService breweryService;
+
+    @GetMapping
+    public ResponseEntity<BreweryMapResponseDto> getBreweryMap() {
+        return new ResponseEntity(breweryService.getMap(),HttpStatus.OK);
+    }
 
     @GetMapping("/{id}/lineup")
     public ResponseEntity<BreweryLineupResponseDto> getBreweryLineup(@PathVariable Integer id){

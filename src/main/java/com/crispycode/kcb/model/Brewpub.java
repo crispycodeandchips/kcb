@@ -18,4 +18,6 @@ public class Brewpub {
     private String facebook;
     private String instagram;
     private String summary;
+    private double latitude;
+    private double longitude;
 }

@@ -1,8 +1,6 @@
 package com.crispycode.kcb.controller;
 
-import com.crispycode.kcb.dto.BreweryEventResponseDto;
-import com.crispycode.kcb.dto.BreweryLineupResponseDto;
-import com.crispycode.kcb.dto.BrewpubBeerResponseDto;
+import com.crispycode.kcb.dto.*;
 import com.crispycode.kcb.model.Brewpub;
 import com.crispycode.kcb.service.BreweryService;
 import com.crispycode.kcb.service.BrewpubService;
@@ -18,6 +16,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(value = "/brewpubs")
 public class BrewpubsController {
         private final BrewpubService brewpubService;
+
+    @GetMapping
+    public ResponseEntity<BrewpubMapResponseDto> getBrewpubMap() {
+        return new ResponseEntity(brewpubService.getMap(),HttpStatus.OK);
+    }
 
         @GetMapping("/{id}")
         public ResponseEntity<Brewpub> getBrewpub(@PathVariable Integer id){
