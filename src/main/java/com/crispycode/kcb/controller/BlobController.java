@@ -19,7 +19,7 @@ import java.util.Map;
 public class BlobController {
     private final BeerService beerService;
 
-    @PostMapping
+    @PostMapping("/beer")
     public ResponseEntity postImage(Vo vo){
             beerService.saveImage(vo);
 
