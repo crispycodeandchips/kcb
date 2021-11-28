@@ -11,7 +11,7 @@ public class Goods {
     private Integer goodsId;
     private String name;
     private Integer price;
-    private String goodsImage;
+    private byte[] goodsImage;
     private String summary;
 
     public GoodsDetailResponseDto toDetailDto() {

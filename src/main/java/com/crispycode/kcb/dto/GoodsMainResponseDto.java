@@ -11,7 +11,7 @@ import lombok.*;
 public class GoodsMainResponseDto {
 
     private Integer id;
-    private String goodsImage;
+    private byte[] goodsImage;
     private String name;
     private Integer price;
 

@@ -26,4 +26,5 @@
         FROM beer b JOIN brewery br on b.brewery_id = br.brewery_Id
         ORDER BY b.release_date DESC;
     </select>
+
 </mapper>

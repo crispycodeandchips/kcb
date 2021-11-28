@@ -15,4 +15,10 @@
         where goods_id = #{id};
     </select>
 
+    <update id="insertImage" parameterType="com.crispycode.kcb.model.VoTest">
+        UPDATE goods
+        SET goods_image = #{file.bytes}
+        WHERE goods_id = #{file.id};
+    </update>
+
 </mapper>

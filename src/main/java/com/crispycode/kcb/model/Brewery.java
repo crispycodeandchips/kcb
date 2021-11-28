@@ -12,7 +12,7 @@ import lombok.Setter;
 public class Brewery {
 
     private String breweryName;
-    private String image;
+    private byte[] image;
     private String address;
     private String phone;
     private String homepage;

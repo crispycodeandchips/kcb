@@ -16,4 +16,10 @@
         FROM brewery br
     </select>
 
+    <update id="insertImage" parameterType="com.crispycode.kcb.model.VoTest">
+        UPDATE brewery
+        SET image = #{file.bytes}
+        WHERE brewery_id = #{file.id};
+    </update>
+
 </mapper>
