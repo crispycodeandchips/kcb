@@ -14,7 +14,7 @@ import java.util.List;
 public class BreweryEventResponseDto {
 
     private String breweryName;
-    private String imageUrl;
+    private byte[] image;
     private String address;
     private String contact;
     private String homepageUrl;

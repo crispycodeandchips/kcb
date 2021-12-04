@@ -14,4 +14,10 @@
         from Event
         order by start_date desc limit 3;
     </select>
+
+    <update id="insertImage" parameterType="com.crispycode.kcb.model.VoTest">
+        UPDATE Event
+        SET image = #{file.bytes}
+        WHERE event_id = #{file.id};
+    </update>
 </mapper>

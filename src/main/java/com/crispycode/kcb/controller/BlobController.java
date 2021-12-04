@@ -3,6 +3,7 @@ package com.crispycode.kcb.controller;
 import com.crispycode.kcb.model.Vo;
 import com.crispycode.kcb.service.BeerService;
 import com.crispycode.kcb.service.BreweryService;
+import com.crispycode.kcb.service.EventService;
 import com.crispycode.kcb.service.GoodsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -22,6 +23,7 @@ public class BlobController {
     private final BeerService beerService;
     private final BreweryService breweryService;
     private final GoodsService goodsService;
+    private final EventService eventService;
 
     @PostMapping("/beer")
     public ResponseEntity postBeerImage(Vo vo){
@@ -29,6 +31,14 @@ public class BlobController {
 
         return new ResponseEntity(HttpStatus.OK);
     }
+
+    @PostMapping("/event")
+    public ResponseEntity postEventImage(Vo vo){
+        eventService.saveImage(vo);
+
+        return new ResponseEntity(HttpStatus.OK);
+    }
+
 
     @PostMapping("/brewery")
     public ResponseEntity postBreweryImage(Vo vo){

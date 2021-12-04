@@ -14,10 +14,10 @@ import java.util.List;
 @NoArgsConstructor
 public class EventResponseDto {
 
+    private byte[] image;
     private String eventName;
     private Date startDate;
     private Date endDate;
-    private String image;
 
     private List<EventResponseDto> Events;
 
