@@ -5,7 +5,8 @@
 <mapper namespace="com.crispycode.kcb.mapper.GoodsMapper">
     <select id="selectGoods" resultType="com.crispycode.kcb.model.Goods">
         SELECT goods_id, name, price, goods_image, summary
-        FROM goods;
+        FROM goods
+        LIMIT #{search.offset}, #{search.limit}
     </select>
 
 

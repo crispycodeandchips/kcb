@@ -1,12 +1,11 @@
 package com.crispycode.kcb.service;
 
-import com.crispycode.kcb.dto.BeerResponseDto;
 import com.crispycode.kcb.dto.GoodsDetailResponseDto;
 import com.crispycode.kcb.dto.GoodsMainResponseDto;
+import com.crispycode.kcb.dto.PaginationDto;
 import com.crispycode.kcb.mapper.GoodsMapper;
 import com.crispycode.kcb.model.*;
 import lombok.RequiredArgsConstructor;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
 
 import java.io.ByteArrayInputStream;
@@ -19,8 +18,8 @@ import java.util.stream.Collectors;
 public class GoodsService {
     private final GoodsMapper goodsMapper;
 
-    public List<GoodsMainResponseDto>getList() {
-        List<Goods> goodsList = goodsMapper.selectGoods();
+    public List<GoodsMainResponseDto>getList(PaginationDto search) {
+        List<Goods> goodsList = goodsMapper.selectGoods(search);
         List<GoodsMainResponseDto> dtoList = goodsList
                 .stream()
                 .map(goods -> new GoodsMainResponseDto(
